@@ -16,7 +16,9 @@ h1, h2, h3, h4, h5, h6, p {
     box-sizing: border-box;
 }
 
+
 /*HEADER*/
+
 header {
     background: #fff;
     padding: 10px;
@@ -37,11 +39,6 @@ nav a {
     color: #333;
 }
 
-nav a:hover {
-    text-decoration: underline;
-    color:#1dc973
-}
-
 nav h1 {
     line-height: 1.5rem;
     margin: 20px auto;
@@ -56,7 +53,9 @@ nav h1 div:last-child {
     letter-spacing: 1px;
 }
 
+
 /*IMAGE GALLERY*/
+
 .grid-container {
     max-width: 1200px;
     display: grid;
@@ -83,11 +82,6 @@ nav h1 div:last-child {
     transition: transform 0.3s;
 }
 
-.grid-container div img:hover {
-    transform: scale(1.2);
-    cursor: pointer;
-}
-
 .grid-container p {
     margin: 15px 0;
 }
@@ -98,10 +92,6 @@ nav h1 div:last-child {
 
 .grid-container div a {
     color: #169656;
-}
-
-.grid-container div a:hover {
-    color: #1dc973;
 }
 
 .horizontal {
@@ -116,7 +106,34 @@ nav h1 div:last-child {
     grid-column: span 2;
 }
 
+
+
 /*MEDIA QUEIRES*/
+
+/*MEDIA QUERY FOR ONLY HOVER CAPABLE DEVICES*/
+
+@media screen and (hover: hover) {
+/*HEADER*/
+
+    nav a:hover {
+        text-decoration: underline;
+        color:#1dc973
+    }
+
+/*IMAGE GALLERY*/
+
+    .grid-container div img:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+
+    .grid-container div a:hover {
+        color: #1dc973;
+    }
+}
+
+/*END OF MEDIA QUERY FOR ONLY HOVER CAPABLE DEVICES*/
+
 @media screen and (max-width: 780px) {
     nav {
         grid-template-columns: repeat(4, 1fr);
@@ -143,8 +160,10 @@ nav h1 div:last-child {
         grid-template-columns: 1fr;
     }
 
-    .grid-container div img:hover {
-        transform: none;
-        cursor: default;
+    @media screen and (hover: hover) {
+        .grid-container div img:hover {
+            transform: none;
+            cursor: default;
+        }
     }
 }
